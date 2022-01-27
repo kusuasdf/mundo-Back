@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\pt_regionController;
-use App\Http\Controllers\pt_provinciaController;
-use App\Http\Controllers\pt_ciudadController;
-use App\Http\Controllers\pt_calleController;
+use App\Http\Controllers\regionController;
+use App\Http\Controllers\provinciaController;
+use App\Http\Controllers\ciudadController;
+use App\Http\Controllers\calleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +23,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 //rutas
-Route::apiResource('regiones',pt_regionController::class);
-Route::apiResource('provincias',pt_provinciaController::class);
-Route::apiResource('ciudades',pt_ciudadController::class);
-Route::apiResource('calles',pt_calleController::class);
+Route::apiResource('regiones',regionController::class);
+Route::apiResource('provincias',provinciaController::class);
+Route::apiResource('ciudades',ciudadController::class);
+Route::apiResource('calles',calleController::class);

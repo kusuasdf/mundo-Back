@@ -3,9 +3,8 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\pt_provincia;
 
-class CreatePtCiudadsTable extends Migration
+class CreateRegionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +13,9 @@ class CreatePtCiudadsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pt_ciudads', function (Blueprint $table) {
+        Schema::create('regions', function (Blueprint $table) {
             $table->id();
-            $table->string('CIU_NAME');
-            $table->foreignIdFor(pt_provincia::class);
+            $table->string('REG_NAME');
             $table->timestamps();
         });
     }
@@ -29,6 +27,6 @@ class CreatePtCiudadsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pt_ciudads');
+        Schema::dropIfExists('regions');
     }
 }

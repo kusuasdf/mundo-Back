@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pt_provincia;
+use App\Models\provincia;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class pt_provinciaController extends Controller
+class provinciaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +17,7 @@ class pt_provinciaController extends Controller
     public function index()
     {
         //recuperamos todas las provincias
-        $provincias = pt_provincia::all();
+        $provincias = provincia::all();
         //respondemos las provincias
         return response()->json($provincias, 200);
     }
@@ -33,10 +33,10 @@ class pt_provinciaController extends Controller
         //validacion
         $request->validate([
             'PROV_NAME'=>'required',
-            'pt_region_id'=>'required'
+            'region_id'=>'required'
         ]);
         //creamos la provincia
-        $provincia = pt_provincia::create($request->all());
+        $provincia = provincia::create($request->all());
         //respondemos la provincia
         return response()->json($provincia, 200);
     }
@@ -52,9 +52,9 @@ class pt_provinciaController extends Controller
     public function show($id)
     {
         //Buscamos para validar que la provincia existe
-        $provincia = pt_provincia::findOrFail($id);
+        $provincia = provincia::findOrFail($id);
         //recuperamos las ciudades de la provincia
-        $ciudades = DB::table('pt_ciudads')->where('pt_provincia_id', $id)->get();
+        $ciudades = DB::table('ciudads')->where('provincia_id', $id)->get();
         //respondemos
         return response()->json($ciudades, 200);
     }
@@ -69,7 +69,7 @@ class pt_provinciaController extends Controller
     public function update(Request $request, $id)
     {
         //buscamos 
-        $provincia = pt_provincia::findOrFail($id);
+        $provincia = provincia::findOrFail($id);
         //actualizamos
         $provincia->update($request->all());
         //respondemos
@@ -85,7 +85,7 @@ class pt_provinciaController extends Controller
     public function destroy($id)
     {
         //buscamos
-        $provincia = pt_provincia::findOrFail($id);
+        $provincia = provincia::findOrFail($id);
         //eliminamos
         $provincia->delete();
         //respondemos
