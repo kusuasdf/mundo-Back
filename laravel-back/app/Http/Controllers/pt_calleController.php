@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\pt_calle;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class pt_calleController extends Controller
 {
@@ -17,6 +18,18 @@ class pt_calleController extends Controller
     {
         //recuperamos todas las calles
         $calles = pt_calle::all();
+        //agregamos a que ciudad pertenece
+        foreach ($calles as $calle) {
+            $calle->ciudad = DB::table('pt_ciudads')->where('id', $calle->pt_ciudad_id)->first();
+        }
+        //agregamos a que provincia pertenece
+        foreach ($calles as $calle) {
+            $calle->provincia = DB::table('pt_provincias')->where('id', $calle->ciudad->pt_provincia_id)->first();
+        }
+        //agregamos a que region pertenece
+        foreach ($calles as $calle) {
+            $calle->region = DB::table('pt_regions')->where('id', $calle->provincia->pt_region_id)->first();
+        }
         //respondemos las calles
         return response()->json($calles, 200);
     }
