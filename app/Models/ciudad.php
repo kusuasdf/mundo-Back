@@ -18,4 +18,8 @@ class ciudad extends Model
     {
         return $this->belongsTo(provincia::class);
     }
+
+    public function calle(){
+        return $this->hasMany(calle::class);
+    }
 }

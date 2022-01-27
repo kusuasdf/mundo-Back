@@ -18,4 +18,8 @@ class provincia extends Model
     {
         return $this->belongsTo(region::class);
     }
+
+    public function ciudad(){
+        return $this->hasMany(ciudad::class);
+    }
 }

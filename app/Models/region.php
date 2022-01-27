@@ -12,4 +12,9 @@ class region extends Model
     protected $fillable = [
         'REG_NAME'
     ];
+
+    public function provincia()
+    {
+        return $this->hasMany(provincia::class);
+    }
 }
