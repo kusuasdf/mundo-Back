@@ -14,7 +14,7 @@ class CreatePtRegionsTable extends Migration
     public function up()
     {
         Schema::create('pt_regions', function (Blueprint $table) {
-            $table->id('REG_ID');
+            $table->id('');
             $table->string('REG_NAME');
             $table->timestamps();
         });
