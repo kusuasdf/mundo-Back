@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pt_ciudad;
+use App\Models\ciudad;
 
 use Illuminate\Http\Request;
 
-class pt_ciudadController extends Controller
+class ciudadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +16,7 @@ class pt_ciudadController extends Controller
     public function index()
     {
         //recuperamos todas las ciudades
-        $ciudades = pt_ciudad::all();
+        $ciudades = ciudad::all();
         //respondemos las ciudades
         return response()->json($ciudades, 200);
     }
@@ -32,10 +32,10 @@ class pt_ciudadController extends Controller
         //validamos
         $request->validate([
             'CIU_NAME'=>'required',
-            'pt_provincia_id'=>'required'
+            'provincia_id'=>'required'
         ]);
         //creamos la ciudad
-        $ciudad = pt_ciudad::create($request->all());
+        $ciudad = ciudad::create($request->all());
         //respondemos la ciudad
         return response()->json($ciudad, 200);
     }
@@ -49,7 +49,7 @@ class pt_ciudadController extends Controller
     public function show($id)
     {
         //buscamos
-        $ciudad = pt_ciudad::findOrFail($id);
+        $ciudad = ciudad::findOrFail($id);
         //respondemos
         return response()->json($ciudad, 200);
     }
@@ -64,7 +64,7 @@ class pt_ciudadController extends Controller
     public function update(Request $request, $id)
     {
         //buscamos
-        $ciudad = pt_ciudad::findOrFail($id);
+        $ciudad = ciudad::findOrFail($id);
         //actuitalizamos
         $ciudad->update($request->all());
         //respondemos
@@ -80,7 +80,7 @@ class pt_ciudadController extends Controller
     public function destroy($id)
     {
         //buscamos
-        $ciudad = pt_ciudad::findOrFail($id);
+        $ciudad = ciudad::findOrFail($id);
         //eliminamos
         $ciudad->delete();
         //respondemos

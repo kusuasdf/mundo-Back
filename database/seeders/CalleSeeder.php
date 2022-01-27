@@ -15,111 +15,111 @@ class CalleSeeder extends Seeder
     public function run()
     {
         //generamos calles de ejemplo
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 1,
+            'ciudad_id' => 1,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 2,
+            'ciudad_id' => 2,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Santa Rosa',
-            'pt_ciudad_id' => 3,
+            'ciudad_id' => 3,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 4,
+            'ciudad_id' => 4,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 5,
+            'ciudad_id' => 5,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 6,
+            'ciudad_id' => 6,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Carrera',
-            'pt_ciudad_id' => 7,
+            'ciudad_id' => 7,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 8,
+            'ciudad_id' => 8,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 9,
+            'ciudad_id' => 9,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 10,
+            'ciudad_id' => 10,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Caupolicán',
-            'pt_ciudad_id' => 11,
+            'ciudad_id' => 11,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 12,
+            'ciudad_id' => 12,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 13,
+            'ciudad_id' => 13,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 14,
+            'ciudad_id' => 14,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Las Mónicas',
-            'pt_ciudad_id' => 15,
+            'ciudad_id' => 15,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 16,
+            'ciudad_id' => 16,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Lurín',
-            'pt_ciudad_id' => 17,
+            'ciudad_id' => 17,
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-        DB::table('pt_calles')->insert([
+        DB::table('calles')->insert([
             'CAL_NAME' => 'Calle Manuel Rodriguez',
-            'pt_ciudad_id' => 18,
+            'ciudad_id' => 18,
             'created_at' => now(),
             'updated_at' => now(),
         ]);

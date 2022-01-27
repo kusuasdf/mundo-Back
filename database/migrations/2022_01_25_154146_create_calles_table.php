@@ -3,9 +3,9 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Models\pt_ciudad;
+use App\Models\ciudad;
 
-class CreatePtCallesTable extends Migration
+class CreateCallesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,10 +14,10 @@ class CreatePtCallesTable extends Migration
      */
     public function up()
     {
-        Schema::create('pt_calles', function (Blueprint $table) {
+        Schema::create('calles', function (Blueprint $table) {
             $table->id();
             $table->string('CAL_NAME');
-            $table->foreignIdFor(pt_ciudad::class);
+            $table->foreignIdFor(ciudad::class);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreatePtCallesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pt_calles');
+        Schema::dropIfExists('calles');
     }
 }

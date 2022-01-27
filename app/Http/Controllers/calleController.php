@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\pt_region;
+use App\Models\calle;
+
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class pt_regionController extends Controller
+class calleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +17,14 @@ class pt_regionController extends Controller
      */
     public function index()
     {
-        //recuperamos todas las regiones
-        $regiones = pt_region::all();
-        //respondemos las regiones
-        return response()->json($regiones, 200);
-
+        //recuperamos todas las calles
+        $calles = calle::select('id','CAL_NAME','ciudad_id')->with([
+            'ciudad:id,CIU_NAME,provincia_id',
+            'ciudad.provincia:id,PROV_NAME,region_id',
+            'ciudad.provincia.region:id,REG_NAME'
+        ])->get();
+        //respondemos las calles
+        return response()->json($calles, 200);
     }
 
     /**
@@ -33,12 +37,13 @@ class pt_regionController extends Controller
     {
         //validacion
         $request->validate([
-            'REG_NAME'=>'required'
+            'CAL_NAME'=>'required',
+            'ciudad_id'=>'required'
         ]);
-        //creamos la region
-        $region = pt_region::create($request->all());
-        //respondemos la region
-        return response()->json($region, 200);
+        //creamos la calle
+        $calle = calle::create($request->all());
+        //respondemos la calle
+        return response()->json($calle, 200);
     }
 
     /**
@@ -47,16 +52,12 @@ class pt_regionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
-    //funcion que recupera las provincias para una region
     public function show($id)
     {
         //buscamos
-        $region = pt_region::findOrFail($id);
-        //recuperamos las provincias de la region
-        $provincias = DB::table('pt_provincias')->where('pt_region_id', $id)->get();
+        $calle = calle::findOrFail($id);
         //respondemos
-        return response()->json($provincias, 200);
+        return response()->json($calle, 200);
     }
 
     /**
@@ -69,11 +70,11 @@ class pt_regionController extends Controller
     public function update(Request $request, $id)
     {
         //buscamos
-        $region = pt_region::findOrFail($id);
+        $calle = calle::findOrFail($id);
         //actualizamos
-        $region->update($request->all());
+        $calle->update($request->all());
         //respondemos
-        return response()->json($region, 200);
+        return response()->json($calle, 200);
     }
 
     /**
@@ -85,11 +86,11 @@ class pt_regionController extends Controller
     public function destroy($id)
     {
         //buscamos
-        $region = pt_region::findOrFail($id);
+        $calle = calle::findOrFail($id);
         //eliminamos
-        $region->delete();
+        $calle->delete();
         //respondemos
-        $json = "{'message':'Región eliminada'}"; 
+        $json = "{'message':'calle eliminada'}"; 
         return response()->json($json, 200);
     }
 }
